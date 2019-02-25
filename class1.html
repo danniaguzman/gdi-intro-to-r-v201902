@@ -1,0 +1,772 @@
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>GDI Intro to R: Class 1</title>
+
+		<meta name="description" content="Girl Develop It Introduction to R class">
+		<meta name="author" content="Girl Develop It">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="dist/css/reveal.css">
+		<link rel="stylesheet" href="dist/css/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!-- light editor --><link rel="stylesheet" href="dist/css/light.css">
+		<!-- dark editor <link rel="stylesheet" href="dist/css/dark.css">-->
+		<!-- <link rel="stylesheet" href="dist/css/zenburn.css"> -->
+
+		<link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!-- If use the PDF print sheet so students can print slides-->
+
+		<link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<!--[if lt IE 9]>
+		<script src="dist/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+		<!-- Opening -->
+				<section>
+					<img src="dist/img/circle-gdi-logo.png" alt="GDI Logo" class="noborder"/>
+					<h1>Intro to R</h1>
+					<h3>Data Exploration and Visualization</h3>
+				</section>
+		<!-- Welcome-->
+				<section>
+					<h3>Welcome!</h3>
+					<div class = "left-align">
+						<p><b>Girl Develop It</b> is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p><br>
+						<h4>Some "rules"</h4>
+						<ul>
+							<li>We are here for you!</li>
+							<li>Every question is important.</li>
+							<li>Help each other.</li>
+							<li>Have fun.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+				  <h2>Welcome!</h2>
+					<div class = "left-align">
+					  <h4>Tell us about yourself.</h4>
+					  <ul>
+						<li>Who are you?</li>
+						<li>What do you hope to get out of the class?</li>
+						<!-- Feel free to change the icebreaker question! -->
+						<li>What is something you learned from a recent failure?</li>
+					  </ul>
+					</div>
+				</section>
+				<!-- Class goals -->
+				<section>
+					<h2>Goals for this class</h2>
+					<span><img src="https://png.icons8.com/color/100/000000/iceberg.png">
+					<p>Gain foundation to get started</p><span>
+					<img src="https://png.icons8.com/color/100/000000/technology-lifestyle.png">
+					<p>Collaborate! Let's fail together</p>
+					<img src="https://png.icons8.com/color/100/000000/clapperboard.png">
+					<p>Learn by doing</p>
+				</section>
+
+				<!-- What is R -->
+				<section>
+					<h2>What is R?</h2>
+					<img src="https://www.r-project.org/logo/Rlogo.svg">
+					<br>
+					<p>Open-source programming language used across industries to work with data.<br></p>
+				</section>
+				<section>
+					<h2>What is R?</h2>
+					<p>"Open source...</p>
+					<div >
+						<ul>
+							<li>Large and growing community:</li>
+								<ul>
+									<li>Creating new functionality through packages</li>
+									<li>Improving existing packages</li>
+									<li>Exchanging analysis approaches</li>
+									<li>Answering questions</li>
+								</ul>
+						</ul>
+					</div>
+				</section>
+				
+				<section>
+					<h2>What is R?</h2>
+					<p>"...programming language.."</p>
+					<div class="left-align">
+						<ul>
+							<li>Based on the S language</li>
+								<ul>
+									<li>conditionals</li>
+									<li>loops</li>
+									<li>user defined functions</li>
+									<li>input and output facilities</li>
+								</ul>
+							<li>No point-and-click interface</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>What is R?</h2>
+					<p>"...used across industries.."</p>
+					<div>
+
+						<img src="img/companies-using-r.png" alt="collage of company logos">
+						<p><small>Photo credit: <a href="https://www.listendata.com/2016/12/companies-using-r.html">Deepanshu Bhalia</a></small></p>
+
+					</div>
+				</section>
+				<section>
+					<h2>What is R?</h2>
+					<p>"...to work with data..."</p>
+					<div >
+					<img src="img/data-science-explore.png">
+					<p><small>Photo credit: <a href="http://r4ds.had.co.nz/introduction.html">Wickham & Grolemund's R for Data Science</a></small></p>
+					</div>
+				</section>
+	<!--R use cases -->
+				<section>
+					<h2>What would you like to do?</h2>
+					<br>
+					<div class="left-align">
+						<ul>
+							<li>Is there a specific type of data you want to work with?</li>
+							<br>
+							<li>What would you like to do with that data?</li>
+						</ul>
+					</div>
+				</section>
+				
+				
+				<section>
+					<h2>What can I do with R?</h2>
+		
+					<div class="left-align">
+						<ul>
+						<li><strong>Descriptive data analysis</strong></li>
+							<ul>
+								<li>Central tendency</li>
+								<p><small>Mean, median, mode </small></p>
+								<li>Variability</li>
+								<p><small>Standard deviation, variance, minimum, maximum, kurtosis, skewness </small></p>
+							</ul>
+							<br>
+						<li><strong>Inferential data analysis </strong> </li>
+							<ul>
+								<li>Regression</li>
+								<li>Machine learning</li>
+								<li>More...</li>
+							</ul>
+							<br>
+						<li><Strong>Data visualization and more!</strong></li>
+						</ul>
+					</div>
+				</section>
+				
+	<!-- R examples -->
+				<section>
+					<h2>Static data visualization</h2>
+					<p>Example 1</p>
+					<img src="img/bbc-gender-lifeexp.png" alt="graph comparing life expectancy from BBC article">
+					<p><small>Photo credit: <a href="https://www.bbc.com/news/health-43726436">BBC</a></small></p>
+				</section>
+				<section>
+					<h2>Static data visualization</h2>
+					<p>Example 2</p>
+					<img src="img/bbc-bonus-gap.png" alt="graph comparing gap in bonus paid by gender">
+					<p><small>Photo credit: <a href="https://www.bbc.com/news/business-43668187">BBC</a></small></p>
+				</section>
+				<section>
+					<h2>Static data visualization</h2>
+					<p>Example 3</p>
+					<img src="img/bbc-gender-pay-gap.png" alt="graph comparing gap in median hourly pay by gender">
+					<p><small>Photo credit: <a href="https://www.bbc.com/news/business-43668187">BBC</a></small></p>
+				</section>
+				<section>
+					<h2>Interactive data visualization</h2>
+					<p>Example 1</p>
+					<img src="img/r-gallery-demo_ggplotly.gif" alt="Gif of interactive scatterplot using r and the ggplotly package">
+					<p><small>Source: <a href="https://www.r-graph-gallery.com/interactive-charts/">R Graph Gallery</a></small></p>
+				</section>
+				<section>
+					<h2>Interactive data visualization</h2>
+					<p>Example 2</p>
+					<img src="img/r-gallery-chloropleth.png" alt="Screenshot of a chloropeth map made with r and the leaflet package">
+					<p><small>Source: <a href="https://www.r-graph-gallery.com/183-choropleth-map-with-leaflet/">R Graph Gallery</a></small></p>
+				</section>
+				<section>
+					<h2>Interactive data visualization</h2>
+					<p>Example 3: Shiny applications</p>
+					<img  src="img/shiny-word-cloud.png">
+					<p><small>Source: <a href="https://shiny.rstudio.com/gallery/word-cloud.html">R Studio Shiny Application</a></small></p>
+				</section>
+
+	<!--Before getting started: Top 3 things to know-->
+				<section>
+
+					<h3>Top 3 things to know before getting started... </h3>
+				</section>
+
+				<section>
+					<h2>1) We are using R <br>via RStudio on the web</h2>
+					<div>
+						<p>Integrated development environment (IDE) for R</p>
+						<a href="https://www.rstudio.com/about/" target="_blank" alt="RStudio homepage link"><img src="img/rstudio-300x260.png"></a>
+						<p><small>Photo credit: <a href="https://www.rstudio.com/">RStudio</a></small></p>
+						<p><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf" target="_blank">RStudio IDE Cheat Sheet</a></p>
+					</div>
+					<div >
+				</section>
+				
+				<section>
+					<h2>Create an <br> RStudio Cloud account</h2>
+		
+					<div >
+						<a href="https://rstudio.cloud/">https://rstudio.cloud</a>
+						</div>
+				</section>
+				
+				<section>
+					<h2>2) We are using functions <br> to operate on objects</h2>
+					<h2> in the R environment</h2>
+					<br>
+				  <p>Huh? What. Does. That. Mean???</p>
+				  <br>
+				  <h3>Let's break it down...</h3>
+				</section>
+
+				<section>
+					<h2>An object holds things...</h2>
+					<p>like a special box</p>
+					<br>
+				  <img  src="img/general-concept-objectprogramming1.png" width = "550">
+				</section>
+				
+				<section>
+					<h2>And these "things"...</h2>
+					<p>may be related, but are not identical</p>
+					<br>
+				  <img  src="img/general-concept-objectprogramming2.png" width = "550">
+				</section>			
+				
+				<section>
+					<h2>When they have names...</h2>
+					<p>that are different and represent them</p>
+					<br>
+				  <img  src="img/general-concept-objectprogramming3.png" width = "550">
+				</section>	
+				
+				<section>
+					<h2>We can command...</h2>
+					<p> and they'll respond, if they know how to</p>
+					<br>
+				  <img  src="img/general-concept-objectprogramming4.png" width = "550">
+				</section>	
+								
+				<section>
+					<h2>Coming back to R...</h2>
+					<br>
+				  <p>We are using functions to operate on objects in the R environment</p>
+				  <br>
+				  <h3>Let's break it down...</h3>
+				</section>				
+				
+
+				<section>
+					<h2>An object is a space...</h2>
+					<p>somewhere in memory</p>
+					<br>
+				  <img  src="img/r-concept-objectprogramming1.png" width = "550">
+				</section>
+				
+				<section>
+					<h2>Where data structures...</h2>
+					<p>of different types and with different properties can be stored</p>
+					<br>
+				  <img  src="img/r-concept-objectprogramming2.png" width = "500">
+				</section>			
+				
+				<section>
+					<h2>When they are assigned names...</h2>
+					<p>that are different and represent them</p>
+					<br>
+				  <img  src="img/r-concept-objectprogramming3.png" width = "500">
+				</section>	
+				
+				<section>
+					<h2>We can use functions on them...</h2>
+					<p> and they'll respond if the functions know what to do with them</p>
+					<br>
+				  <img  src="img/r-concept-objectprogramming4.png" width = "500">
+				</section>	
+				
+				<section>
+					<h2>Or we might get an error...</h2>
+				  <img  src="img/r-concept-objectprogramming5.png" width = "500" >
+				</section>					
+				
+				<section>
+					<h2>We might get an error...</h2>
+					<p>1) if the function cannot be used on that type of object,</p>
+					<p>2) if the object cannot be found, or</p> 
+					<p>3) if the function has not been defined</p>  
+			
+				</section>	
+												
+				<section>
+					<h2>Makes more sense?</h2>
+					<br>
+				  <p>We are using functions to operate on objects in the R environment</p>
+				  <br>
+				</section>	
+				
+				<section>
+					<h2>Syntactically correct variable names</h2>
+					<div>
+						<ul>
+							<li>letters</li>
+							<li>numbers</li>
+							<li>dot or underline characters</li>
+							<li>starts with a letter</li>
+							<li>starts with a dot not followed by a number (e.g. ".2way" is not valid)</li>
+							<li>reserved words are not valid</li>
+						</ul><br><br>
+						<p>Note: Rules for object names in R are <a href="https://www.r-bloggers.com/rules-for-naming-objects-in-r/"> flexible</a>.</p>
+					</div>
+				</section>
+			
+				<section>
+					<h2>Stored objects are added to the workspace</h2>
+					<div>
+						<p> Objects in the workspace (a.k.a. global environment)
+							 indicate objects stored in the current memory 
+							 (i.e. in a server or RAM on your local computer for local installation of R)</p>
+						<br>
+						<p>R loads data and any object created to memory. 
+							Low memory space limits the data size which can be used.</p>
+					</div>
+				</section>
+				
+				<section>
+					<h2>Key takeaways</h2>
+					<ul>
+						<li>R has different data structures</li>
+							<ul>
+								<li>Vectors</li>
+								<li>Data Frames/ Tibbles</li>
+								<li>Others...</li>
+							</ul>
+						<li>Data structures are stored as objects</li>
+						<li>Functions are used to operate on objects</li>
+						<li>R is case sensitive</li>
+					</ul>
+				</section>	
+								
+				<section>
+					<h2>3) We use packages <br>created by users</h2>
+					<br>
+					<p>To extend the capabilities of R</p>
+					<br>
+					<ul>
+						<li>Access objects created by other users </li>
+						<br>
+						<li>More functions to work with your objects</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Packages</h2>
+					<div>
+						<p>Free libraries of functions created by R users</p>
+						<a href="https://www.rdocumentation.org"><iframe src="https://www.rdocumentation.org/" width="800" height="400"></iframe></a>
+					</div>
+				</section>
+				
+  			
+  			<section>
+					<h2>So there can be many approaches</h2>
+					<h2>for arriving at a solution</h2>
+					<br>
+				  <img  src="img/r-concept-packages.png" >
+				</section>	 
+   
+   		  <section>
+					<h2>But not all packages<br> are created equal</h2>
+					<br>
+					<p>As you explore more package, consider:</p>
+					<br>
+					<ul>
+						<li>Reputable and active developer?</li>
+						<br>
+						<li>Work well with other packages needed?</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Recommended Packages</h2>
+					<div>
+						<p><a href="https://www.tidyverse.org/">Tidyverse</a></p>
+						<a href="https://www.tidyverse.org/"><iframe src="https://www.tidyverse.org/" width="800" height="400"></iframe></a>
+						<br><br>
+						<p><a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages"> Others...</a></p>
+					</div>
+				</section>
+				
+						
+				<section>
+					<h2>Install package once,<br> load on every session</h2>
+					<div>
+						<h4>Install a package</h4>
+						<code>
+							install.packages("&ltpackage name&gt")
+						</code><br><br>
+						<h4>Load a package</h4>
+						<code>
+							library(&quot&ltpackage name&gt&quot)
+						</code>
+					</div>
+				</section>
+				
+	<!--Let's get started-->
+	
+				<section>
+					<h3>Let's meet R </h3>
+				</section>
+				
+				
+				<section>
+					<h2>Log in to your <br> RStudio Cloud account</h2>
+		
+					<div >
+						<a href="https://rstudio.cloud/">https://rstudio.cloud</a>
+						<br><br>
+						<p>Local alternative</p>
+						<p>Open local installation of RStudio on your laptop</p>
+					</div>
+				</section>
+				
+				<section>
+					<h2>Let's create a project</h2>
+					<p>And use the console like a calculator</p>
+					<br>
+					<h3>Can you split the tip (21.45% of $225) among 4 friends?</h3>
+					<br>
+					<p>Arithmetic operators:</p>
+					<ul>
+						<li>Parenthesis: ()</li>
+						<li>Exponents: ** or ^</li>
+						<li>Multiplication: *</li>
+						<li>Division: /</li>
+						<li>Addition: +</li>
+						<li>Subtraction: -</li>
+					</ul>
+				</section>				
+	
+				<section>
+					<h2>Store code in a source file</h2>
+					<div>
+						<p>file > new file</p>
+						<ul>
+							<li>R Script</li>
+							<li>R Markdown</li>
+						</ul>
+						<br>
+						<br>
+						<p> What is different between an R Script and Markdown file?</p>
+					<div>
+				</section>
+
+
+<!--Develop research question and gather data-->
+
+				<section>
+					<h2>Once upon a time...</h2>
+					
+				</section>
+			
+				<section>
+					<h2>Motivation...</h2>
+					<p>A group of students where curious to know
+						how satisfied their peers felt with their professors.</p>
+				</section>
+
+				<section>
+					<h2>Exploratory Data Analysis (EDA)</h2>
+					<p>They wanted to understand better:</p>
+					<ul>
+						<li>Do all professors get similar evaluation scores?</li>
+						<li>Do professors' average evaluation score tend to be higher
+							 if they are tenured? </li>
+						<li>Could biases on professors' looks or other 
+							characteristics have some 
+						relationship with how professors are evaluated at the end
+						 of a course?</li>
+					</ul>		
+				</section>			
+				
+  			<section>
+					<h2>Identify data sources</h2>
+					<ul>
+						<li>end-of-semester class evaluation,</li>
+						<li>other demographic info,</li>
+						<li>asking 6 students to rate how beautiul 
+							each professor is</li>
+					</ul>  
+				</section>				
+				
+				<section>
+					<h2>Gather and organize the data</h2>
+					<p>How will you organize the 400+ responses expected?</p>
+				
+				  <img  src="img/eval-survey2.png" width = "1500" >
+				</section>	
+						
+				<section>
+					<h2>Use R to explore the data</h2>
+					<pTransitioning to a new R Markdown for remainder of class</p>
+				</section>
+				
+				<section>
+					<h2>Exploring Professor Evaluation Data</h2>
+					<div>
+						<ul>
+							<li>Go to the project: <a href="https://rstudio.cloud/project/232063">https://rstudio.cloud/project/232063</a></li>
+              <p><small>Or get files from GitHub repo: <a href="https://github.com/danniaguzman/gdi-intro-to-r-v201902/tree/master/r-files">gdi-intro-to-r-v201902/r-files/intro-to-r-v201902/</a></small></p>
+							<li>Save a permanent copy of the project to your RStudio Cloud Workspace</li><br>
+							<li>Navigate to the eda-eval.Rmd file</li><br>				
+						</ul>
+					</div>
+				</section>
+<!--Session 2-->
+		
+  			<section>
+					<h2>Data Visualization</h2>
+				</section>			
+		
+<!--Class 2 Content --->
+				<section>
+					<h2>Visualizing data with ggplot2</h2>
+					<p>5 minute crash course</p>
+					<div>
+					</div>
+				</section>
+				<section>
+					<h2>Grammar of Graphics</h2>
+					<div>
+						<img src="img/grammar-graphics-summary.png">
+						<p><small><a href="https://towardsdatascience.com/murdering-a-legendary-data-story-what-can-we-learn-from-a-grammar-of-graphics-ad6ca42f5e30">Source: Towards Data Science</a></small></p>
+					</div>
+				</section>
+				<section>
+					<h2>Graphs with ggplot2</h2>
+					<p>The 3 essential layers</p>
+					<div>
+						<img src="img/grammar-graphics-layer123.png">
+						<p><small><a href="https://towardsdatascience.com/murdering-a-legendary-data-story-what-can-we-learn-from-a-grammar-of-graphics-ad6ca42f5e30">Source: Towards Data Science</a></small></p>
+					</div>
+				</section>
+				<section>
+					<h2>Graphs with ggplot2</h2>
+					<p>The 3 essential layers</p><br>
+					<div>
+						<code>
+							ggplot( data = < DATA >) + </code><br><br>
+						<code>< GEOM_FUNCTION >( mapping = aes( < MAPPINGS >))
+						</code><br><br>
+						<p><small><a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">ggplot2 Cheat Sheet</a></small></p>
+					</div>
+				</section>
+				
+				<section>
+					<h2>Exploring Professor Evaluation Data</h2>
+					<div>
+						<ul>
+							<li>Open your R Markdown file from the first class</li>				
+						</ul>
+					</div>
+				</section>				
+				
+		
+		<!--Optional-->		
+				<section>
+					<h2>For your reference...</h2>
+					<p>These optional slides are not discussed during class
+						 time.</p>
+					<br>
+					<p>Optional homework is to review after class and ask any questions on slack.</p>
+				</section>
+				
+				<section>
+					<h2>Manipulate objects with functions</h2>
+					<br>
+					<h4>Generic syntax</h4>
+					<code>
+						function(&ltobject&gt)
+					</code>
+					<br>
+					<br>
+					<h4>Find the average age</h4>
+					<code>
+						mean(age)
+					</code><br><br>
+					<p>Functions often have optional arguments that can be specified 
+						and default options that can be changed</p>
+				</section>
+				
+				<section>
+					<h2>Objects have a class and other properties</h2>
+					<br>
+					<h4>Find the class of an object</h4>
+					<code>
+						class(&ltobject&gt)
+					</code>
+					<br><br>
+					<h4>View other properties about an object</h4>
+					<code class= "source">
+						attributes(&ltobject&gt)
+					</code><br><br>
+					<code class= "source">
+						str(&ltobject&gt)
+					</code><br><br>
+					<code class= "source">
+						length(&ltobject&gt)
+					</code><br><br>
+					<code class= "source">
+						dim(&ltobject&gt)
+					</code><br><br>
+					<p>Some properties may be NULL if they have never
+						 been set or are not relevant to the object</p>
+				</section>
+				<section>
+					<h2>Functions to check the type of vector</h2>
+					<div>
+						<code>
+							is.numeric(&ltvector&gt)
+						</code><br><br>
+						<code>
+							is.character(&ltvector&gt)
+						</code><br><br>
+						<code>
+							is.logical(&ltvector&gt)
+						</code><br><br>
+						<code>
+							is.factor(&ltvector&gt)
+						</code>
+					</div>
+				</section>
+				<section>
+					<h2>Convert objects to a different type</h2>
+					<br></br>
+					<h4>Generic syntax</h4>
+					<code>as.something(object)</code>
+					<br><br>
+					<h4>Convert a numeric vector to a character vector</h4>
+					<code>
+						as.character(&ltvector&gt)
+					</code><br><br>
+				</section>
+				<section>
+					<h2>Functions are sensitive to object class</h2>
+					<br>
+					<p>Output may differ depending on the object class</p>
+					<br>
+					<p>Or the function may not work at all with some objects</p>
+				</section>
+				
+			
+				<section>
+					<h2>A taste of Base R...</h2>
+				</section>
+<!--Base R - Accessing elements of objects -->
+				<section>
+					<h2>Elements in an object can be accessed</h2>
+					<br>
+					<h4>Access elements in a vector</h4>
+					<img src="img/index-vector.png">
+					<p><small>Source: <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf">Base R Cheat Sheet</a></small></p>
+				</section>
+				<section>
+					<h2>Logical operators</h2>
+					<br>
+					<h4>Use logical operators to select desired elements</h4>
+					<img src="img/logical-operators.png">
+					<p><small>Source: <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf">Base R Cheat Sheet</a></small></p>
+				</section>
+				<section>
+					<h2>Elements in an object <br>can be accessed</h2>
+					<br>
+					<h4>Access elements in a data frame</h4>
+					<img src="img/index-df.png">
+					<p><small>Source: <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf">Base R Cheat Sheet</a></small></p>
+				</section>
+				<section>
+	<!----- END OF CLASS CONTENT --------->
+	
+	
+								
+			</div>
+		<footer>
+		<div class="copyright">
+		  Intro to R -- NYC Chapter --
+		  <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+		</div>
+	  </footer>
+		</div>
+
+
+		<script src="dist/js/head.min.js"></script>
+		<script src="dist/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'dist/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
