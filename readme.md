@@ -2,18 +2,11 @@
 
 # Intro to R
 
-Slides and materials are hosted at [https://danniaguzman.github.io/gdi-intro-to-r/](https://danniaguzman.github.io/gdi-intro-to-r/).
+Slides and materials are hosted at [https://danniaguzman.github.io/gdi-intro-to-r-v201902/](https://danniaguzman.github.io/gdi-intro-to-r-v201902/).
 
 ## Course description
 
 This two-part class is an introduction to R, an open-source programming language for reading, transforming, analyzing and visualizing data. By the end of the two sessions, you will have a basic foundation for getting started with R. While R is used to perform sophisticated statistical analysis and visualizations, these are beyond the scope of these introductory sessions. The goal is to jumpstart by focusing on the building blocks when working with data in R.
-
-
-**Dates: July 10 and July 12, 7 pm to 9 pm**
-
-**Location: DoSomething.org**
-
-A limited number of scholarships are available for those with a financial hardship. To apply, contact us at...
 
 
 ### Prerequisites:
